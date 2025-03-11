@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ContactForm = ({ onSubmit }) => {
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
 
-  const handleChange = (e) => {A
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setContact({ ...contact, [name]: value });
   };
