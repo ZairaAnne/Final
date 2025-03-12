@@ -1,7 +1,8 @@
 import React from "react";
+import './ContactList.css';
 
 const ContactList = ({ contacts, onDelete }) => (
-  <table>
+  <table classname="table">
     <thead>
       <tr>
         <th>Name</th>
