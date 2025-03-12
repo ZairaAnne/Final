@@ -1,10 +1,11 @@
 import React from 'react';
 import './ContactList.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const ContactList = ({ contacts, onDelete }) => {
+const ContactList = ({ contacts, onDelete, onEdit }) => {
   return (
     <div>
-      <h1></h1>
       <table className="table">
         <thead>
           <tr>
@@ -21,7 +22,15 @@ const ContactList = ({ contacts, onDelete }) => {
               <td><a href={`mailto:${contact.email}`}>{contact.email}</a></td>
               <td>{contact.phone}</td>
               <td>
-                <button className="button" onClick={() => onDelete(contact)}>Delete</button>
+                <button className="icon-button1" onClick={() => onEdit(contact)}>
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                  <button className="icon-button2" onClick={() => {
+                  console.log('Delete button clicked for', contact);
+                  onDelete(contact);
+                }}>
+                    <FontAwesomeIcon icon={faTrashCan} />
+                </button>
               </td>
             </tr>
           ))}
