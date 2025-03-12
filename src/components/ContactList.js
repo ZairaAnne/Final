@@ -1,29 +1,34 @@
-import React from "react";
+import React from 'react';
 import './ContactList.css';
 
-const ContactList = ({ contacts, onDelete }) => (
-  <table classname="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {contacts.map((contact) => (
-        <tr key={contact.id}>
-          <td>{contact.name}</td>
-          <td>{contact.email}</td>
-          <td>{contact.phone}</td>
-          <td>
-            <button onClick={() => onDelete(contact.id)}>Delete</button>
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-);
+const ContactList = ({ contacts, onDelete }) => {
+  return (
+    <div>
+      <h1>Contact List</h1>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {contacts.map((contact, index) => (
+            <tr key={index}>
+              <td>{contact.name}</td>
+              <td><a href={`mailto:${contact.email}`}>{contact.email}</a></td>
+              <td>{contact.phone}</td>
+              <td>
+                <button className="button" onClick={() => onDelete(contact)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default ContactList;

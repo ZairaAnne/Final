@@ -8,4 +8,4 @@ const ContactListPage = ({ contacts, deleteContact }) => (
   </div>
 );
 
-export default ContactListPage; 
+export default ContactListPage;
