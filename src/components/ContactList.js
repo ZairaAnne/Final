@@ -4,7 +4,7 @@ import './ContactList.css';
 const ContactList = ({ contacts, onDelete }) => {
   return (
     <div>
-      <h1>Contact List</h1>
+      <h1></h1>
       <table className="table">
         <thead>
           <tr>
