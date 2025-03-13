@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ContactList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -23,13 +24,13 @@ const ContactList = ({ contacts, onDelete, onEdit }) => {
               <td>{contact.phone}</td>
               <td>
                 <button className="icon-button1" onClick={() => onEdit(contact)}>
-                    <FontAwesomeIcon icon={faEdit} />
-                  </button>
-                  <button className="icon-button2" onClick={() => {
+                  <FontAwesomeIcon icon={faEdit} />
+                </button>
+                <button className="icon-button2" onClick={() => {
                   console.log('Delete button clicked for', contact);
-                  onDelete(contact);
+                  onDelete(contact.id);
                 }}>
-                    <FontAwesomeIcon icon={faTrashCan} />
+                  <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               </td>
             </tr>
